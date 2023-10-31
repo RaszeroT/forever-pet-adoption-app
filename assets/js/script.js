@@ -15,7 +15,6 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
             var createOption = document.createElement('option');
             createOption.textContent = allBreedsArray[i][0];
             breedSearchEl.appendChild(createOption);
-
         }
     })
 
