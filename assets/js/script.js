@@ -1,3 +1,11 @@
+
+
+
+fetch('https://www.googleapis.com/books/v1/volumes?q=husky')
+.then(function (data) {
+            console.log('data', data.json());
+        })
+
 var breedSearchEl = document.querySelector('#breedSelector');
 var availablePetsEL = document.querySelector('#availablePets');
 var breedURL = `https://dog.ceo/api/breed/hound/images`
@@ -26,3 +34,4 @@ fetch(breedURL)
     .then(function (data) {
         console.log(data);
     })
+
