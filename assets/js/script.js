@@ -32,7 +32,4 @@ breedForm.addEventListener('submit', function (e) {
                 console.log(dataBooks[i]);
             }    
         })
-   
-
-
 })
