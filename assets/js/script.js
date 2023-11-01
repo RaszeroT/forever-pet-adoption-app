@@ -2,7 +2,7 @@ var breedSearchEl = document.querySelector('#breedSelector');
 var availablePetsEL = document.querySelector('#availablePets');
 var breedForm = document.querySelector('#breedForm');
 var displayInfoEl = document.querySelector('#displayInfo');
-
+var clearBtnEl = document.getElementById('clear-button')
 
 fetch(`https://dog.ceo/api/breeds/list/all`)
     .then(function (response) {
