@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width='device-width', initial-scale=1.0">
-    <title>Pet Adoption</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Encyclopedia</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
+
 <body>
-    
+    <header>
+        <h1>Dog Breed Encyclopedia</h1>
+    </header>
+    <container id="mainContent">
+        <section id="aboutSec">
+            <h2>Need Information About a Certain Breed?</h2>
+            <p id="description">
+                Our dog breed encyclopedia can give interesting information
+                about a variety of diverse dog breeds. Simply select a breed
+                you want to learn about and information will show on screen.
+            </p>
+        </section>
+        <section id="formContent">
+            <h2>Search for Breed Information Below!</h2>
+            <form id="breedForm">
+                <select id="breedSelector"></select>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="displayInfo">
+        </section>
+    </container>
+    <script src="assets/js/script.js"></script>
 </body>
+
+
 </html>

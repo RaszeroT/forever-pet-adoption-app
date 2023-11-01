@@ -1,68 +1,45 @@
-// text in search in localStorage
-// keep saved searches
-// clicked old searches shows results
+var breedSearchEl = document.querySelector('#breedSelector');
+var availablePetsEL = document.querySelector('#availablePets');
+var breedForm = document.querySelector('#breedForm');
+var displayInfoEl = document.querySelector('#displayInfo');
 
 
-var petForm = document.querySelector('petForm');
-var previousPets = document.createElement('previous-pets');
+fetch(`https://dog.ceo/api/breeds/list/all`)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        var allBreeds = data.message;
+        var allBreedsArray = Object.entries(allBreeds);
+        for (let i = 0; i < allBreedsArray.length; i++) {
+            console.log(allBreedsArray[i][0]);
+            var createOption = document.createElement('option');
+            createOption.textContent = allBreedsArray[i][0];
+            breedSearchEl.appendChild(createOption);
+        }
+    })
 
+breedForm.addEventListener('submit', function (e) {
+    console.log("form submitted");
+    e.preventDefault();
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=dog+${breedSearchEl.value}`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data.items);
+            var dataBooks = data.items
+            displayResults(dataBooks);
+        })
+})
 
-var pets = [];
-
-// renders items in a pets list
-function renderPets() {
-    previousPets.innerHTML = '';
-    // render a new <li> for each pet
-    for (var i = 0; i < pets.length; i++) {
-        var pet = pets[i];
-        var li = document.createElement('li');
-        li.textContent = pet;
-        li.setAttribute('', i);
-        // create X button
-        var button = document.createElement('button');
-        button.textContent = 'X';
-        li.appendChild(button);
-        previousPets.appendChild(li);
+function displayResults(dataBooks) {
+    for (i = 0; i < dataBooks.length; i++) {
+        console.log(dataBooks[i].searchInfo.textSnippet);
+        var item = dataBooks[i]
+        var createTitle = document.createElement("div");
+        createTitle.textContent = item.volumeInfo.title;
+        displayInfoEl.appendChild(createTitle);
     }
 }
-
-// run when page loads
-function init() {
-    // get from localStorage
-    var storedPets = JSON.parse(localStorage.getItem('pets'));
-    if (storedPets !== null) {
-        pets = storedPets;
-    }
-    // render pets to DOM
-    renderPets();
-}
-
-function storePets() {
-    localStorage.setItem('pets', JSON.stringify(pets));
-}
-
-// submit event
-btn.addEventListener('click', function(event) {
-    event.preventDefault();
-    var petText = petInput.value.trim();
-    if (petText === '') {
-        return;
-    }
-    // add new pets to array, clear input
-    pets.push(petText);
-    petInput.value = '';
-    storePets();
-    renderPets();
-});
-// remove pets
-pet.addEventListener('click', function(event) {
-    var element = event.target;
-    if (element.matches() === true) {
-        var index = element.parentElement.getAttribute('');
-        pets.splice(index, 1);
-        storePets();
-        renderPets();
-    }
-});
-
-init()
