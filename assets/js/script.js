@@ -4,9 +4,11 @@
 
 
 var petForm = document.querySelector('petForm');
-var previousPets = document.querySelector('');
+var previousPets = document.createElement('previous-pets');
+
 
 var pets = [];
+
 // renders items in a pets list
 function renderPets() {
     previousPets.innerHTML = '';
@@ -15,7 +17,7 @@ function renderPets() {
         var pet = pets[i];
         var li = document.createElement('li');
         li.textContent = pet;
-        li.setAttribute('data-index', i);
+        li.setAttribute('', i);
         // create X button
         var button = document.createElement('button');
         button.textContent = 'X';
@@ -31,7 +33,7 @@ function init() {
     if (storedPets !== null) {
         pets = storedPets;
     }
-    // rendder pets to DOM
+    // render pets to DOM
     renderPets();
 }
 
@@ -40,7 +42,7 @@ function storePets() {
 }
 
 // submit event
-petForm.addEventListener('submit', function(event) {
+btn.addEventListener('click', function(event) {
     event.preventDefault();
     var petText = petInput.value.trim();
     if (petText === '') {
@@ -52,11 +54,11 @@ petForm.addEventListener('submit', function(event) {
     storePets();
     renderPets();
 });
-
-petList.addEventListener('click', function(event) {
+// remove pets
+pet.addEventListener('click', function(event) {
     var element = event.target;
-    if (element.matches('button') === true) {
-        var index = element.parentElement.getAttribute('data-index');
+    if (element.matches() === true) {
+        var index = element.parentElement.getAttribute('');
         pets.splice(index, 1);
         storePets();
         renderPets();
