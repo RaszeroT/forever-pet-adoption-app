@@ -37,9 +37,37 @@ breedForm.addEventListener('submit', function (e) {
 function displayResults(dataBooks) {
     for (i = 0; i < dataBooks.length; i++) {
         console.log(dataBooks[i].searchInfo.textSnippet);
-        var item = dataBooks[i]
-        var createTitle = document.createElement("div");
-        createTitle.textContent = item.volumeInfo.title;
+        var dataItems = dataBooks[i]
+        var createBrkPt = document.createElement("br");
+        var createTitle = document.createElement("h3");
+        createTitle.textContent = dataItems.volumeInfo.title;
         displayInfoEl.appendChild(createTitle);
+        displayInfoEl.appendChild(createBrkPt);
+        var createInfo = document.createElement("div");
+        createInfo.textContent = dataItems.searchInfo.textSnippet;
+        displayInfoEl.appendChild(createInfo);
+        displayInfoEl.appendChild(createBrkPt);
+        if (dataItems.saleInfo.buyLink) {
+            var createAnchor = document.createElement("a");
+            createAnchor.setAttribute('href', dataItems.saleInfo.buyLink);
+            var createButton = document.createElement("button")
+            createButton.textContent = "Book"
+            createAnchor.appendChild(createButton);
+            displayInfoEl.appendChild(createAnchor);
+            displayInfoEl.appendChild(createBrkPt);
+        } else {
+            var createAnchorElseCond = document.createElement("div")
+            createAnchorElseCond.textContent = "No Link Available";
+            displayInfoEl.appendChild(createAnchorElseCond);
+        }
+        // if (dataItems.volumeInfo.imageLinks.smallThumbnail) {
+            var createImg = document.createElement("img");
+            createImg.setAttribute('src', dataItems.volumeInfo.imageLinks.smallThumbnail);
+            displayInfoEl.appendChild(createImg);
+        // } else {
+            // var createImgElseCond = document.createElement("div")
+            // createImgElseCond.textContent = "No Image Available";
+            // displayInfoEl.appendChild(createImgElseCond);
+        // }
     }
 }
