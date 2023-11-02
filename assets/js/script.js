@@ -60,14 +60,13 @@ function displayResults(dataBooks) {
             createAnchorElseCond.textContent = "No Link Available";
             displayInfoEl.appendChild(createAnchorElseCond);
         }
-        // if (dataItems.volumeInfo.imageLinks.smallThumbnail) {
+        if (dataItems.volumeInfo.imageLinks) {
             var createImg = document.createElement("img");
             createImg.setAttribute('src', dataItems.volumeInfo.imageLinks.smallThumbnail);
             displayInfoEl.appendChild(createImg);
-        // } else {
-            // var createImgElseCond = document.createElement("div")
-            // createImgElseCond.textContent = "No Image Available";
-            // displayInfoEl.appendChild(createImgElseCond);
-        // }
-    }
-}
+        } else {
+            var createImgElseCond = document.createElement("div")
+            createImgElseCond.textContent = "No Image Available";
+            displayInfoEl.appendChild(createImgElseCond);
+        }
+    }}
