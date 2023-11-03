@@ -70,3 +70,67 @@ function displayResults(dataBooks) {
             displayInfoEl.appendChild(createImgElseCond);
         }
     }}
+
+var favorites = document.createElement('favorites');
+
+var breeds = [];
+
+// render items in a breeds list
+function renderBreeds() {
+    favorites.innerHTML = '';
+    // new <li> for each breed
+    for (var i = 0; i < breeds.length; i++) {
+        var breed = breeds[i];
+        var li = document.createElement('li');
+        li.textContent = breed;
+        li.setAttribute('ATTRIBUTES', i);
+        // create X button
+        var button = document.createElement('button');
+        button.textContent = 'X';
+        li.appendChild(button);
+        favorites.appendChild(li);
+        button.addEventListener('click', function(event) {
+            var element = event.target;
+            if (element.matches() === true) {
+                var index = element.parentElement.getAttribute('ATTRIBUTE');
+                breeds.splice(index, 1);
+                storeBreeds();
+                renderBreeds();
+            }
+        })
+    }
+}
+var storedBreeds;
+// run when page loads
+function init() {
+    // get from localStorage
+    storedBreeds = JSON.parse(localStorage.getItem('favorites'));
+    if (storedBreeds !== null) {
+        breeds = storedBreeds;
+    }
+    // render breeds to DOM
+    renderBreeds();
+}
+
+function storeBreeds() {
+    localStorage.setItem('breeds', JSON.stringify(breeds));
+}
+
+// submit event
+displayInfoEl.addEventListener('click', function(event) {
+    event.preventDefault();
+    var breedText = breedSearchEl.value.trim();
+    console.log(breedText);
+    if (breedText === '') {
+        return;
+    }
+    // add new breeds to array
+    breeds.push(breedText);
+    breedSearchEl.value = '';
+    console.log(breeds);
+    storeBreeds();
+    renderBreeds();
+})
+
+
+init()
