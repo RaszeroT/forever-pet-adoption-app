@@ -7,7 +7,8 @@ body {
     width: 100%;
     background-color:#ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("photo-grass background.png")
+    background-image: url("photo-grass background.png");
+    min-height: 100vh;
 }
 
   /* Style the header */
@@ -32,49 +33,122 @@ body {
     font-weight:bold;
     }
 
-
-  /* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33.33%;
+#aboutSec {
+  flex: 1;
+  margin:0 auto;
+  width: 100%;
+  text-align:left;
+  vertical-align: middle;
+  background: transparent;
+  height: 100px;
+  flex-wrap: left;
 }
 
-.row:after {
+h2{
+  padding-left: 10px;
+  font-size: 2em 
+}
+
+#description {
+  padding-left: 20px;
+  width: 50%;
+}
+
+#formContent {
+
+}
+
+#breedSelector {
+  color: black;
+  text-transform: uppercase;
+  background: silver;
+  border: 5px solid black;
+  font-size: 30px;
+  font-weight: bold;
+  transition: all;
+  text-align: center;
+  
+}
+
+button {
+  color: rgb(128, 0, 6);
+  text-transform: uppercase;
+  background: silver;
+  border: 5px solid rgba(255, 255, 255, 0.795);
+  font-size: 25px;
+  font-weight: bold;
+  transition: all;
+  text-align: center;
+}
+
+button:hover {
+    color: #ffffff;
+    background: rgb(128, 0, 6);
+    border-color: black;
+    transition: all;
+}
+
+.row {
     content: "";
     display: table;
     clear: both;
 }
 
+#displayInfo{
+  display: flex;
+}
+
+.bookTitle {
+  float: left;
+  width: 33.33%;
+  display: table;
+}
 
 img {
     pointer-events: none;
-    position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
     border-radius: 25px;
 }
+
+/* img {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+} */
 
   /* footer */
 .footer {
     background-color: #f1f1f1;
     padding: 10px;
     text-align: center;
-    position: absolute;
+    position: fixed;
     Width: 100%;
     bottom: 0;
 }
 
+
+@media (max-width: 900px) {
+  .header h1 {
+    font-size: 2.5em;
+    text-align:left;
+    vertical-align: middle;
+  }
+
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  {
+
+  }
+}
+
   /* Three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-    .column {
-      width: 100%;
+  @media (max-width: 600px) {
+    {
+
     }
-
-    @media (max-width: 600px) {
-        .header {
-          width: 100%;
-        }
-
-
 }
