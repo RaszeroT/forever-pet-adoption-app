@@ -29,9 +29,7 @@ Dog Breed Encyclopedia
 
 ## Application Images:
 
-<img src='./assets/images/wedpage-1.jpeg' width='300' height='300'>
-<img src='./assets/images/webpage-2.jpeg'  width='300' height='300'>
-<img src='./assets/images/webpage-3.jpeg'  width='300' height='300'>
+<img src='./assets/images/Screenshot 2023-11-06 103043.png' width='300' height='300'>
 
 ## Link to Live Site:
 
@@ -64,15 +62,9 @@ Dog Breed Encyclopedia
 </ul>
 
 ## Tasks for Style.css:
+
 <li>Create CSS file:</li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
+<p>Using what we have learnt which CSS and styling properties, we have been successful in creating a polished User Interface.</p>
 
 ## What we learnt as a team in this project:
 
