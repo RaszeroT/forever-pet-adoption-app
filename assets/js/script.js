@@ -37,10 +37,10 @@ breedForm.addEventListener("submit", function (e) {
 
 function displayResults(dataBooks) {
   console.log(dataBooks);
+  displayInfoEl.innerHTML=""
   for (i = 0; i < dataBooks.length; i++) {
   console.log(dataBooks[i].searchInfo.textSnippet);
   var dataItems = dataBooks[i];
-  // var createBrkPt = document.createElement("br");
   let bookDiv = document.createElement("div");
   bookDiv.style.display = "flex";
   bookDiv.style.flex="30%";
@@ -66,10 +66,8 @@ function displayResults(dataBooks) {
   let titleDiv = document.createElement("div");
   var createTitle = document.createElement("h3");
   createTitle.textContent = dataItems.volumeInfo.title;
-  // createTitle.classList.add("bookTitle");
   titleDiv.appendChild(createTitle);
   infoDiv.appendChild(titleDiv);
-  // displayInfoEl.appendChild(createBrkPt);
   var createInfo = document.createElement("div");
   createInfo.textContent = dataItems.searchInfo.textSnippet;
   infoDiv.appendChild(createInfo);
@@ -82,13 +80,18 @@ if (dataItems.saleInfo.buyLink) {
     createButton.textContent = "Book";
     createAnchor.appendChild(createButton);
     infoDiv.appendChild(createAnchor);
-    // infoDiv.appendChild(createBrkPt);
+  
 } else {
     var createAnchorElseCond = document.createElement("div");
     createAnchorElseCond.textContent = "No Link Available";
     infoDiv.appendChild(createAnchorElseCond);
 }
-bookDiv.append(infoDiv)  // // displayInfoEl.appendChild(createBrkPt);
+bookDiv.append(infoDiv) 
 displayInfoEl.append(bookDiv)
     }
 }
+
+
+clearBtnEl.addEventListener("click",function(event){
+  event.preventDefault()
+  displayInfoEl.innerHTML=""})

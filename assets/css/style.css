@@ -42,7 +42,6 @@ width: 100%;
 text-align:left;
 vertical-align: middle;
 background: transparent;
-height: 100px;
 flex-wrap: left;
 }
 
@@ -56,8 +55,8 @@ padding-left: 20px;
 width: 50%;
 }
 
-#formContent {
-  flex-wrap: left;
+#breedForm {
+  padding-left: 20px;
 }
 
 #breedSelector {
@@ -87,12 +86,6 @@ button:hover {
   background: rgb(128, 0, 6);
   border-color: black;
   transition: all;
-}
-
-.row {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .card {
@@ -134,7 +127,6 @@ img {
   bottom: 0;
 }
 
-
 @media (max-width: 900px) {
 .header h1 {
   font-size: 2.5em;
@@ -144,19 +136,9 @@ img {
 }
 
 @media (max-width: 700px) {
-#aboutSec {
-  
-  }
-}
-
-@media (max-width: 700px) {
   #formContent {
-    
-  }
-}
-
-@media (max-width: 700px) {
-  #description {
-    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
