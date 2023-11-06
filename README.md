@@ -1,6 +1,6 @@
 # Title:
 
-Dog Breed Encyclopedia -- NOTE-- This can be re-thunk
+Dog Breed Encyclopedia
 
 ## Project description:
 
@@ -29,8 +29,13 @@ Dog Breed Encyclopedia -- NOTE-- This can be re-thunk
 
 ## Application Images:
 
-<img src='' width='300' height='300'>
-<img src=''  width='300' height='300'>
+<img src='./assets/images/wedpage-1.jpeg' width='300' height='300'>
+<img src='./assets/images/webpage-2.jpeg'  width='300' height='300'>
+<img src='./assets/images/webpage-3.jpeg'  width='300' height='300'>
+
+## Link to Live Site:
+
+<a href="https://raszerot.github.io/forever-pet-adoption-app/">CLICK HERE</a>
 
 ## APIs Used:
 
@@ -71,7 +76,7 @@ Dog Breed Encyclopedia -- NOTE-- This can be re-thunk
 
 ## What we learnt as a team in this project:
 
-<p>As a team in this project, it is easy to say that we learned multiple. First, working with others on a single project proves more difficult than first expected. We have honed our skills in using GitHub with multiple contributors, creating issues, and using Kanban.<br>However, having the opportunity to work with others shows that many eyes looking at one issue can be a speedy resolve to a daunting problem.<br> We have also learned, it is important to have a daily scrum before any work is done so everybody can have there own tasks and be able to check in with you're team mates. <br> Next, we have worked together to debug issues to end up with the MVP for product as a first task, but to do so, we had to work together with debugging and honing dot notation to be pulling the correct data.<br>Not only do we believe we learnt much during this project but we also understand that we have a lot to learn. But, <i>Thats the exciting part<i></p>
+<p>As a team, it is easy to say that we learned multiple things. First, working with others on a single project proves more difficult than first expected. We have honed our skills in using GitHub with multiple contributors, creating issues, and using Kanban.<br>However, having the opportunity to work with has shown that many eyes looking at one issue can be a speedy resolve to a daunting problem.<br> We have also learned, it is important to have a daily scrum before any work is done so everybody can have there own tasks and be able to check in with you're team mates. <br> Next, we have worked together to debug issues to end up with the MVP for product as a first task, but to do so, we had to work together with debugging and honing dot notation to be pulling the correct data.<br>Not only do we believe we learnt much during this project but we also understand that we have a lot to learn. However, <i>Thats the exciting part<i></p>
 
 ## Contributors:
 
@@ -87,9 +92,9 @@ Dog Breed Encyclopedia -- NOTE-- This can be re-thunk
 <p>Throughout this project we had credits from our Instructor and TA's:</p>
 
 <ul>
-<li>Max Mayfield</li>
-<li>Colin Barnes</li>
-<li>Andrew Hudginson</li>
+<li>Max Mayfield - Instructor</li>
+<li>Colin Barnes - TA</li>
+<li>Andrew Hudginson - TA</li>
 </ul>
 
 ## License
