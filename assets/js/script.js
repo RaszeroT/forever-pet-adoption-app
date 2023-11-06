@@ -43,7 +43,8 @@ function displayResults(dataBooks) {
   // var createBrkPt = document.createElement("br");
   let bookDiv = document.createElement("div");
   bookDiv.style.display = "flex";
-  bookDiv.style.flex="30%"
+  bookDiv.style.flex="30%";
+  bookDiv.classList.add('card');
   let imageDiv = document.createElement("div");
   if (dataItems.volumeInfo.imageLinks) {
     var createImg = document.createElement("img");
